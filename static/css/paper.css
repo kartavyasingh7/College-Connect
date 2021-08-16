@@ -1,0 +1,13 @@
+b {
+    line-height: .7;
+    margin: 0 0 10px;
+    font-size: 21px;
+    color: #333333;
+    Font-family: Consolas, monaco, monospace;
+}
+
+#paperL {
+    display: none;
+    margin-top:10em;
+    margin-left:3.5em;
+}

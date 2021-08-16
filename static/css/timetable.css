@@ -1,0 +1,74 @@
+#table{
+float: left;
+padding: 1em;
+margin-left: 3em;
+margin-right: 12em;
+border: 3px dashed rgb(107, 6, 28);
+}
+
+a {
+text-decoration: none;
+}
+
+#yrNav {
+font-family: monospace;
+}
+
+#hover {
+font: italic small-caps bold 16px/2 cursive;
+margin-top: 2em;
+background: rgb(68, 34, 148);
+list-style: none;
+padding-left: 0;
+}
+
+.LI {
+color: #fff;
+background: rgb(68, 34, 148);
+display: block;
+float: left;
+padding: 1em;
+position: relative;
+text-decoration: none;
+transition-duration: 0.5s;
+}
+
+.LI a {
+color: #fff;
+}
+
+.LI:hover,
+.LI:focus-within {
+background: rgb(212, 96, 28);
+cursor: pointer;
+}
+
+.LI:focus-within a {
+outline: none;
+}
+
+#hover .LI .dropdown {
+background: orange;
+visibility: hidden;
+opacity: 0;
+min-width: 5rem;
+position: absolute;
+transition: all 0.5s ease;
+margin-top: 1rem;
+left: 0;
+display: none;
+}
+
+#hover .LI:hover > .dropdown,
+#hover .LI:focus-within > .dropdown,
+#hover .LI .dropdown:hover,
+#hover .LI .dropdown:focus {
+visibility: visible;
+opacity: 1;
+display: block;
+}
+
+#hover .LI .dropdown .LI {
+clear: both;
+width: 100%;
+}

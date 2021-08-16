@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'images/minor2.jpg' %}" alt="college">
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="/register" onsubmit="return verifyPassword()">
+                        {% csrf_token %}
+                        <h2>student registration form</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First Name :</label>
+                                <input type="text" name="first_name" id="first_name" autocomplete="off" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name :</label>
+                                <input type="text" name="last_name" id="last_name" autocomplete="off" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="enroll">Enrollment Number :</label>
+                            <input type="number" name="enroll" id="enroll" maxlength="10" autocomplete="off" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID :</label>
+                            <input type="email" name="email" id="email" autocomplete="off" required/>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Which Year :</label>
+                                <div class="form-select">
+                                    <select name="year" id="year">
+                                        <option value="1st">1st</option>
+                                        <option value="2nd">2nd</option>
+                                        <option value="3rd">3rd</option>
+                                        <option value="4th">4th</option>
+                                    </select>
+                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="batch">Batch :</label>
+                                <div class="form-select">
+                                    <select name="batch" id="batch">
+                                        <option value="E1">E1</option>
+                                        <option value="E2">E2</option>
+                                        <option value="E2">E3</option>
+                                        <option value="E2">E4</option>
+                                        <option value="F1">F1</option>
+                                        <option value="F2">F2</option>
+                                        <option value="F3">F3</option>
+                                        <option value="F4">F4</option>
+                                        <option value="F5">F5</option>
+                                        <option value="F6">F6</option>
+                                        <option value="F7">F7</option>
+                                        <option value="F8">F8</option>
+                                    </select>
+                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pass1">Password :</label>
+                                <input type="password" name="pass1" id="pass1" autocomplete="off" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass2">Re-enter your password :</label>
+                                <input type="password" name="pass2" id="pass2" autocomplete="off" required/>
+                                <span id = "message" style="color:red"> </span>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="reset" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main_signup.js' %}"></script>
+    <script src="{% static 'js/signup_verify.js' %}"></script>
+</body>
+</html>

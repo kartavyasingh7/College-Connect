@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <div class="grid">
+      <div class="annapurna" id="float_child">
+        <img src="{% static 'images/anna.jpeg' %}" alt="" class="img1">
+      </div>
+      <div class="cafe" id="float_child" >
+        <img src="{% static 'images/cafe.jpeg' %}" alt="" class="img1">
+      </div>
+    </div>
+{% endblock content %}

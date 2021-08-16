@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/welcome_css.css' %}">
+  <div id="lmao">
+    <h1>Welcome To Connect</h1>
+    <h2>{{ user.first_name }} {{ user.last_name }} &nbsp;   {{ user.username }}</h2>
+  </div>
+{% endblock content %}

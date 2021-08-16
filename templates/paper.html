@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+    <link href="{% static 'css/timetable.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/Bcss/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/paper.css' %}" rel="stylesheet" />
+    <nav role="navigation" id="yrNav" style="left: 50%; position: absolute; transform: translate(-50%); border-bottom: red; padding: 1em 185px; border-bottom-style: double;">
+    <ul id="hover">
+        <li class="LI"><a href="#" aria-haspopup="true">Branch</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li class="LI" onclick="set11()"><a href="#">Cse</a></li>
+                <li class="LI" onclick="set12()"><a href="#">Ece</a></li>
+            </ul>
+        </li>
+        <li class="LI"><a href="#" aria-haspopup="true">Year</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li class="LI" onclick="set21()"><a href="#">1st Year</a></li>
+                <li class="LI" onclick="set22()"><a href="#">2nd Year</a></li>
+                <li class="LI" onclick="set23()"><a href="#">3rd Year</a></li>
+                <li class="LI" onclick="set24()"><a href="#">4th Year</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button onclick="myfunc()" type="button" class="btn btn-primary" style="float: left; position: absolute; margin-left: 10em;">Submit</button>
+    </nav>
+    <div id="paperL" >
+        {% for post in file %}
+        <div><b>{{post.title}}</b> &nbsp; <a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}"><button type="button" class="btn btn-success">Download</button></a></div><br>
+        {% endfor %}
+    </div>
+    <script>
+    function myfunc()
+    {
+        document.getElementById('paperL').style.display = "block";
+    }
+    </script>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+<img src="{% static 'images/timetable.jpeg' %}" id="table">
+<nav role="navigation" id="yrNav">
+    <ul id="hover">
+        <li class="LI"><a href="#" aria-haspopup="true">YEAR</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li class="LI" onclick="change1()"><a href="#">1st Year</a></li>
+                <li class="LI" onclick="change2()"><a href="#">2nd Year</a></li>
+                <li class="LI" onclick="change3()"><a href="#">3rd Year</a></li>
+                <li class="LI" onclick="change4()"><a href="#">4th Year</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<link href="{% static 'css/timetable.css' %}" rel="stylesheet" />
+<script>
+     function change1()
+    {
+        document.getElementById("table").setAttribute("src","{% static 'images/table1.png' %}")
+    }
+    function change3()
+    {
+        document.getElementById("table").setAttribute("src","{% static 'images/table3.png' %}")
+    }
+
+</script>
+{% endblock content %}
